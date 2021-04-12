@@ -10,12 +10,9 @@ app.use(function (req, res, next) {
   next();
 });
 
-const quizzesController = require('./controllers/quizzes-controller')
-quizzesController(app)
-
-const questionController = require('./controllers/question-controller')
-questionController(app)
-
+require('./controllers/demo-controller')(app)
+require('./controllers/quizzes-controller')(app)
+require('./controllers/question-controller')(app)
 
 app.listen(4000)
 

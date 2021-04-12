@@ -12,7 +12,7 @@ module.exports = (app) => {
     res.send(questions)
   }
 
-  app.get("/api/questions", findAllQuestions())
-  app.get("/api/quizzes/:qzid/questions", findQuestionsForQuiz())
+  app.get("/api/questions", findAllQuestions)
+  app.get("/api/quizzes/:qzid/questions", findQuestionsForQuiz)
 }
 
