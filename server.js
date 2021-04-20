@@ -5,8 +5,8 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost:27017/whiteboard-01',
 //     {useNewUrlParser: true, useUnifiedTopology: true});
-const uri = process.env.MONGODB_URI
-mongoose.connect(`mongodb+srv://anjun77:cindyanjun0215@anjun77.t2s9u.mongodb.net/whiteboard-01?retryWrites=true&w=majority`,
+
+mongoose.connect(process.env.MONGODB_URI,
     {useNewUrlParser: true, useUnifiedTopology: true});
 
 const session = require('express-session')
@@ -26,7 +26,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-var bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
@@ -34,5 +34,5 @@ require('./controllers/demo-controller')(app)
 require('./controllers/quizzes-controller')(app)
 require('./controllers/question-controller')(app)
 
-app.listen(process.env.PORT ||4000)
+app.listen(process.env.PORT||4000)
 

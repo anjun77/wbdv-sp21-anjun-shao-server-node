@@ -11,10 +11,10 @@ module.exports = (app) => {
   }
 
   const findQuestionsForQuiz = (req, res) => {
-    const qzid = req.params.qzid;
+    const qid = req.params.qzid;
     // const questions = questionService.findQuestionsForQuiz(qzid)
     // res.send(questions)
-    questionService.findQuestionsForQuiz(qzid)
+    questionService.findQuestionsForQuiz(qid)
     .then((questions) => {
       res.send(questions)
     })
